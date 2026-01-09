@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Research | Shalaka Gangurde</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Research Specific Styles */
+        .research-header-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .research-badge-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-badge {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            background: #222;
+            color: var(--text-secondary);
+            border: 1px dashed var(--border-color);
+        }
+
+        .status-badge.wip {
+            color: #ffab00;
+            /* Amber for Work in Progress */
+            border-color: #ffab00;
+        }
+
+        .research-title {
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .research-meta {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Scope & Methodology Panel */
+        .method-panel {
+            background-color: #111;
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+        }
+
+        .method-title {
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .scope-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .scope-list li {
+            margin-bottom: 0.8rem;
+            color: #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .scope-list li span.val {
+            font-family: var(--font-mono);
+            color: var(--accent-blue);
+        }
+
+        /* Key Findings (Preliminary) */
+        .finding-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border: 1px solid #333;
+            margin-bottom: 1rem;
+        }
+
+        .finding-metric {
+            font-size: 2rem;
+            font-family: var(--font-mono);
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Taxonomy Visualization (CSS Drawing) */
+        .taxonomy-viz {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            background: #000;
+            border: 1px solid #222;
+        }
+
+        .tax-node {
+            border: 1px solid #444;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            color: #888;
+        }
+
+        .tax-node.active {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: rgba(0, 255, 157, 0.05);
+        }
+
+        .arrow-down {
+            text-align: center;
+            color: #444;
+        }
+
+        @media (max-width: 900px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-area">
+                <span class="initials">SG</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="navigation.html" style="color: var(--accent-green);">00</a></li>
+                <li><a href="index.html" data-tooltip="Profile">01</a></li>
+                <li><a href="projects.html" data-tooltip="Projects">02</a></li>
+                <li><a href="experience.html" data-tooltip="Timeline">03</a></li>
+                <li><a href="skills.html" data-tooltip="Capability Matrix">04</a></li>
+                <li><a href="research.html" class="active" data-tooltip="Academic Archives">05</a></li>
+                <li><a href="writing.html" data-tooltip="Writing Log">06</a></li>
+                <li><a href="contact.html" data-tooltip="Comms Terminal">07</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="status-bar">
+                <div class="identity">
+                    <h1>Academic Archives</h1>
+                    <span class="role">Independent Research</span>
+                </div>
+                <div class="system-status">
+                    <span class="status-text">MS STATUS: DRAFTING</span>
+                </div>
+            </header>
+
+            <!-- Main Research Header -->
+            <article class="research-header-card">
+                <div class="research-badge-row">
+                    <span class="status-badge"
+                        style="color: var(--accent-green); border-color: var(--accent-green);">PUBLISHED SURVEY</span>
+                    <span class="status-badge">OCTOBER 2025</span>
+                    <span class="status-badge">VIDYALANKAR INSTITUTE OF TECHNOLOGY</span>
+                </div>
+                <h2 class="research-title">Generative AI for Automated Machine Learning: A Comprehensive Survey</h2>
+                <p class="research-meta">
+                    Shalaka Gangurde • Manoj Suryawanshi
+                </p>
+
+                <div class="research-grid">
+
+                    <!-- Left Column: Abstract & Gallery -->
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="method-panel">
+                            <h4 class="method-title">ABSTRACT</h4>
+                            <p style="color: #ccc; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                                Automated Machine Learning (AutoML) seeks to reduce human effort in designing and tuning
+                                machine
+                                learning pipelines, while generative AI has shown remarkable capabilities in creating
+                                data
+                                and models across domains. This survey reviews the intersection of these fields,
+                                examining
+                                how generative models (transformers, GANs, VAEs, diffusion models) are applied to
+                                automate
+                                AutoML components. We first outline AutoML tasks (neural architecture search, feature
+                                engineering, hyperparameter tuning, data augmentation) and generative AI fundamentals.
+                                We
+                                propose a taxonomy classifying GenAI-AutoML methods by generative model type and AutoML
+                                task.
+                            </p>
+
+                            <h4 class="method-title">KEY CONTRIBUTIONS</h4>
+                            <ul class="scope-list">
+                                <li>
+                                    <span>Taxonomy</span>
+                                    <span class="val">Structure by Model Type & Task</span>
+                                </li>
+                                <li>
+                                    <span>Analysis</span>
+                                    <span class="val">NAS, AFE, HPO, Augmentation</span>
+                                </li>
+                                <li>
+                                    <span>Comparison</span>
+                                    <span class="val">GPT-NAS vs DiffusionNAG</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Paper Gallery -->
+                        <div>
+                            <h4 class="method-title" style="margin-bottom: 1rem;">PAPER PREVIEW</h4>
+                            <div
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.5rem;">
+                                <a href="assets/research_paper/page_1.png" target="_blank"
+                                    style="border: 1px solid #333; overflow: hidden; border-radius: 4px; transition: opacity 0.2s; opacity: 0.8;">
+                                    <img src="assets/research_paper/page_1.png" alt="Pg1"
+                                        style="width: 100%; display: block;">
+                                </a>
+                                <a href="assets/research_paper/page_2.png" target="_blank"
+                                    style="border: 1px solid #333; overflow: hidden; border-radius: 4px; transition: opacity 0.2s; opacity: 0.8;">
+                                    <img src="assets/research_paper/page_2.png" alt="Pg2"
+                                        style="width: 100%; display: block;">
+                                </a>
+                                <a href="assets/research_paper/page_3.png" target="_blank"
+                                    style="border: 1px solid #333; overflow: hidden; border-radius: 4px; transition: opacity 0.2s; opacity: 0.8;">
+                                    <img src="assets/research_paper/page_3.png" alt="Pg3"
+                                        style="width: 100%; display: block;">
+                                </a>
+                                <a href="assets/research_paper/page_4.png" target="_blank"
+                                    style="border: 1px solid #333; overflow: hidden; border-radius: 4px; transition: opacity 0.2s; opacity: 0.8;">
+                                    <img src="assets/research_paper/page_4.png" alt="Pg4"
+                                        style="width: 100%; display: block;">
+                                </a>
+                                <a href="assets/research_paper/page_5.png" target="_blank"
+                                    style="border: 1px solid #333; overflow: hidden; border-radius: 4px; transition: opacity 0.2s; opacity: 0.8;">
+                                    <img src="assets/research_paper/page_5.png" alt="Pg5"
+                                        style="width: 100%; display: block;">
+                                </a>
+                                <a href="assets/research_paper/page_6.png" target="_blank"
+                                    style="border: 1px solid #333; overflow: hidden; border-radius: 4px; transition: opacity 0.2s; opacity: 0.8;">
+                                    <img src="assets/research_paper/page_6.png" alt="Pg6"
+                                        style="width: 100%; display: block;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Findings & Metrics -->
+                    <div>
+                        <div class="finding-card">
+                            <span class="finding-metric">~12%</span>
+                            <p>Accuracy gain in GenAI-augmented NAS tasks (GPT-NAS) vs traditional heuristics on
+                                benchmarks.</p>
+                        </div>
+                        <div class="finding-card">
+                            <span class="finding-metric">50x</span>
+                            <p>Inference speedup using EDNAG (Evolutionary + Diffusion) compared to extensive
+                                architecture searches.</p>
+                        </div>
+                        <div class="finding-card">
+                            <span class="finding-metric">SOTA</span>
+                            <p>LLM-FE (Feature Engineering) consistently outperforms baselines on diverse classification
+                                tasks.</p>
+                        </div>
+
+                        <!-- Taxonomy Viz -->
+                        <div class="taxonomy-viz">
+                            <div class="tax-node active">GenAI-AutoML Taxonomy</div>
+                            <div class="arrow-down">↓</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div class="tax-node">NAS (Transformer/GAN)</div>
+                                <div class="tax-node">AFE (Context LLM)</div>
+                                <div class="tax-node">HPO (LLM-Bayes)</div>
+                                <div class="tax-node">Augmentation (Diffusion)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
+        </main>
+    </div>
+</body>
+
+</html>

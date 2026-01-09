@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Shalaka Gangurde</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .channel-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
+        }
+
+        .channel-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-5px);
+            background: linear-gradient(180deg, var(--card-bg) 0%, rgba(0, 255, 157, 0.05) 100%);
+        }
+
+        .channel-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .channel-name {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-link {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+        }
+
+        .secure-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.6rem;
+            border: 1px solid #333;
+            padding: 2px 6px;
+            color: #666;
+            font-family: var(--font-mono);
+        }
+
+        .channel-card:hover .secure-badge {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .transmission-log {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .log-entry {
+            margin-bottom: 0.5rem;
+        }
+
+        .log-time {
+            color: var(--accent-blue);
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-area">
+                <span class="initials">SG</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="navigation.html" style="color: var(--accent-green);">00</a></li>
+                <li><a href="index.html" data-tooltip="Profile">01</a></li>
+                <li><a href="projects.html" data-tooltip="Projects">02</a></li>
+                <li><a href="experience.html" data-tooltip="Timeline">03</a></li>
+                <li><a href="skills.html" data-tooltip="Capability Matrix">04</a></li>
+                <li><a href="research.html" data-tooltip="Academic Archives">05</a></li>
+                <li><a href="writing.html" data-tooltip="Writing Log">06</a></li>
+                <li><a href="contact.html" class="active" data-tooltip="Comms Terminal">07</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="status-bar">
+                <div class="identity">
+                    <h1>Comms Terminal</h1>
+                    <span class="role">Establish Connection</span>
+                </div>
+                <div class="system-status">
+                    <span class="status-text">STATUS: ONLINE</span>
+                </div>
+            </header>
+
+            <section class="intro-card">
+                <h2>Initiate Uplink.</h2>
+                <p>Open for collaboration on Data Science, AI Research, and Analytical storytelling projects.</p>
+            </section>
+
+            <div class="contact-grid">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/shalaka-g-45833a368" target="_blank" class="channel-card">
+                    <div class="secure-badge">ENCRYPTED</div>
+                    <div>
+                        <div class="channel-icon">in</div>
+                        <div class="channel-name">LinkedIn Profile</div>
+                    </div>
+                    <div class="channel-link">linkedin.com/in/shalaka-g-45833a368</div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Shalaka127" target="_blank" class="channel-card">
+                    <div class="secure-badge">PUBLIC REPO</div>
+                    <div>
+                        <div class="channel-icon">git</div>
+                        <div class="channel-name">GitHub Repositories</div>
+                    </div>
+                    <div class="channel-link">github.com/Shalaka127</div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:shalaka.12.sg@gmail.com" class="channel-card">
+                    <div class="secure-badge">DIRECT MSG</div>
+                    <div>
+                        <div class="channel-icon">@</div>
+                        <div class="channel-name">Email Transmission</div>
+                    </div>
+                    <div class="channel-link">shalaka.12.sg@gmail.com</div>
+                </a>
+            </div>
+
+            <div class="transmission-log">
+                <div class="log-entry"><span class="log-time">SYS_READY</span> Awaiting incoming styling signals...
+                </div>
+                <div class="log-entry"><span class="log-time">NET_CHECK</span> All channels nominal.</div>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

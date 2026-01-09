@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Matrix | Shalaka Gangurde</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Matrix Grid Styles */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .matrix-quadrant {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle Corner Decor/Label */
+        .matrix-quadrant::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid var(--accent-green);
+            border-right: 2px solid var(--accent-green);
+        }
+
+        .quadrant-title {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            font-size: 0.9rem;
+            background-color: #111;
+            padding: 0.6rem 1rem;
+            border: 1px solid #333;
+            color: #ddd;
+            transition: all 0.2s;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-blue);
+            color: #fff;
+            transform: translateX(3px);
+        }
+
+        .skill-item.major {
+            border-left: 3px solid var(--accent-green);
+            /* Highlight core skills */
+        }
+
+        /* Operational Traits Section */
+        .traits-container {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .trait-card {
+            background-color: #151515;
+            padding: 1.5rem;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .trait-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .trait-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .traits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-area">
+                <span class="initials">SG</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="navigation.html" style="color: var(--accent-green);">00</a></li>
+                <li><a href="index.html" data-tooltip="Profile">01</a></li>
+                <li><a href="projects.html" data-tooltip="Projects">02</a></li>
+                <li><a href="experience.html" data-tooltip="Timeline">03</a></li>
+                <li><a href="skills.html" class="active" data-tooltip="Capability Matrix">04</a></li>
+                <li><a href="research.html" data-tooltip="Academic Archives">05</a></li>
+                <li><a href="writing.html" data-tooltip="Writing Log">06</a></li>
+                <li><a href="contact.html" data-tooltip="Comms Terminal">07</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="status-bar">
+                <div class="identity">
+                    <h1>Capability Matrix</h1>
+                    <span class="role">Technical & Operational Stacks</span>
+                </div>
+                <div class="system-status">
+                    <span class="status-text">SYSTEM INTEGRITY: OPTIMAL</span>
+                </div>
+            </header>
+
+            <!-- The Matrix -->
+            <div class="matrix-grid">
+
+                <!-- Q1: Computational Core -->
+                <div class="matrix-quadrant">
+                    <div class="quadrant-title">Q1 :: COMPUTATIONAL CORE</div>
+                    <div class="skill-list">
+                        <div class="skill-item major">Python</div>
+                        <div class="skill-item major">SQL (Advanced)</div>
+                        <div class="skill-item">Pandas</div>
+                        <div class="skill-item">NumPy</div>
+                        <div class="skill-item">Scikit-learn</div>
+                        <div class="skill-item">Data Structures & Algo</div>
+                        <div class="skill-item">OOP (Python)</div>
+                        <div class="skill-item">Data Cleaning</div>
+                    </div>
+                </div>
+
+                <!-- Q2: Predictive Modeling -->
+                <div class="matrix-quadrant">
+                    <div class="quadrant-title">Q2 :: PREDICTIVE MODELING</div>
+                    <div class="skill-list">
+                        <div class="skill-item major">XGBoost</div>
+                        <div class="skill-item major">Random Forest</div>
+                        <div class="skill-item">LSTM</div>
+                        <div class="skill-item">SARIMA / Prophet</div>
+                        <div class="skill-item">Model Evaluation</div>
+                        <div class="skill-item">Feature Engineering</div>
+                        <div class="skill-item">Hyperparameter Tuning</div>
+                        <div class="skill-item">Class Imbalance</div>
+                    </div>
+                </div>
+
+                <!-- Q3: Frontier Tech -->
+                <div class="matrix-quadrant">
+                    <div class="quadrant-title">Q3 :: FRONTIER TECH</div>
+                    <div class="skill-list">
+                        <div class="skill-item major">Generative AI Pipelines</div>
+                        <div class="skill-item major">LLM Text Analysis</div>
+                        <div class="skill-item">YOLOv8 & OpenCV</div>
+                        <div class="skill-item">OpenAI API</div>
+                        <div class="skill-item">Whisper (ASR)</div>
+                        <div class="skill-item">Responsible AI</div>
+                        <div class="skill-item">Human-in-the-loop</div>
+                    </div>
+                </div>
+
+                <!-- Q4: Visual Intelligence -->
+                <div class="matrix-quadrant">
+                    <div class="quadrant-title">Q4 :: VISUAL INTELLIGENCE</div>
+                    <div class="skill-list">
+                        <div class="skill-item major">Power BI</div>
+                        <div class="skill-item major">KPI Design</div>
+                        <div class="skill-item">Dashboard Architecture</div>
+                        <div class="skill-item">Data Storytelling</div>
+                        <div class="skill-item">Exploratory Analysis (EDA)</div>
+                        <div class="skill-item">Statistical Viz</div>
+                        <div class="skill-item">Plotly & Seaborn</div>
+                    </div>
+                </div>
+
+                <!-- Q5: Data Pipelines -->
+                <div class="matrix-quadrant">
+                    <div class="quadrant-title">Q5 :: DATA PIPELINES</div>
+                    <div class="skill-list">
+                        <div class="skill-item major">REST APIs</div>
+                        <div class="skill-item">YouTube Data API</div>
+                        <div class="skill-item">Reddit API</div>
+                        <div class="skill-item">OAuth</div>
+                        <div class="skill-item">Data Aggregation</div>
+                        <div class="skill-item">ETL Workflows</div>
+                    </div>
+                </div>
+
+                <!-- Q6: Analytical Practice -->
+                <div class="matrix-quadrant">
+                    <div class="quadrant-title">Q6 :: ANALYTICAL PRACTICE</div>
+                    <div class="skill-list">
+                        <div class="skill-item major">Analytical Storytelling</div>
+                        <div class="skill-item">Insight Communication</div>
+                        <div class="skill-item">User-Centric Thinking</div>
+                        <div class="skill-item">Research Synthesis</div>
+                        <div class="skill-item">Problem Framing</div>
+                        <div class="skill-item">Documentation</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

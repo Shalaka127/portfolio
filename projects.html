@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Shalaka Gangurde</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Page Specific Overrides */
+        .filter-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: rgba(0, 255, 157, 0.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--border-color);
+            /* Default top border */
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-top-color: var(--accent-blue);
+            /* Hover accent */
+        }
+
+        /* Category Color Coding */
+        .cat-ml {
+            border-top-color: #ff5252;
+        }
+
+        /* Red for Risk/ML */
+        .cat-vision {
+            border-top-color: #7c4dff;
+        }
+
+        /* Purple for Vision */
+        .cat-genai {
+            border-top-color: #00e5ff;
+        }
+
+        /* Cyan for AI */
+        .cat-bi {
+            border-top-color: #ffab00;
+        }
+
+        .cat-nlp {
+            border-top-color: #e91e63;
+            /* Pink for NLP */
+        }
+
+        /* Amber for BI */
+
+        .pj-header {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 0.5rem;
+        }
+
+        .pj-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .pj-context {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+        }
+
+        .git-link {
+            font-size: 0.7rem;
+            color: var(--accent-green);
+            text-decoration: none;
+            border: 1px solid var(--accent-green);
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-family: var(--font-mono);
+            transition: all 0.2s;
+            margin-left: auto;
+            /* Push to right */
+        }
+
+        .git-link:hover {
+            background: var(--accent-green);
+            color: #000;
+        }
+
+        .pj-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-pill {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            background: #222;
+            color: #aaa;
+            border-radius: 2px;
+            font-family: var(--font-mono);
+        }
+
+        .pj-impact-box {
+            background-color: #111;
+            padding: 1rem;
+            margin-top: auto;
+            border-left: 2px solid var(--accent-green);
+            font-size: 0.85rem;
+            color: #ddd;
+        }
+
+        .pj-impact-box ul {
+            list-style: none;
+        }
+
+        .pj-impact-box li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .pj-impact-box li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .pj-impact-box li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation (Same as Landing) -->
+        <nav class="sidebar">
+            <div class="logo-area">
+                <span class="initials">SG</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="navigation.html" style="color: var(--accent-green);">00</a></li>
+                <li><a href="index.html" data-tooltip="Profile">01</a></li>
+                <li><a href="projects.html" class="active" data-tooltip="Projects">02</a></li>
+                <li><a href="experience.html" data-tooltip="Timeline">03</a></li>
+                <li><a href="skills.html" data-tooltip="Capability Matrix">04</a></li>
+                <li><a href="research.html" data-tooltip="Academic Archives">05</a></li>
+                <li><a href="writing.html" data-tooltip="Writing Log">06</a></li>
+                <li><a href="contact.html" data-tooltip="Comms Terminal">07</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="status-bar">
+                <div class="identity">
+                    <h1>Projects & Applied Intelligence</h1>
+                    <span class="role">Data Science & Analytics Projects</span>
+                </div>
+                <div class="system-status">
+                    <span class="status-text">TOTAL RECORDS: 7</span>
+                </div>
+            </header>
+
+            <!-- Filter Controls -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">ALL_SYSTEMS</button>
+                <button class="filter-btn" data-filter="cat-ml">ML_OPS</button>
+                <button class="filter-btn" data-filter="cat-vision">VISION</button>
+                <button class="filter-btn" data-filter="cat-genai">GEN_AI</button>
+                <button class="filter-btn" data-filter="cat-bi">BI_ANALYTICS</button>
+                <button class="filter-btn" data-filter="cat-nlp">NLP</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+
+
+                <!-- Project 1: Credit Risk -->
+                <article class="project-card cat-ml">
+                    <div class="pj-header">
+                        <div class="pj-title">Credit Risk & Fraud Scoring Engine</div>
+                        <span class="pj-context">Academic Project | ML Pipeline</span>
+                        <a href="https://github.com/Shalaka127/credit-risk-modeling" target="_blank" class="git-link"
+                            title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">Pandas</span>
+                        <span class="tech-pill">XGBoost</span>
+                        <span class="tech-pill">SMOTE</span>
+                        <span class="tech-pill">PCA</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Reduced feature space by 50% (retaining 92% variance).</li>
+                            <li>Increased accuracy from 0.64 to 0.75.</li>
+                            <li>Reduced high-cost misclassification errors by 63%.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 2: Brain Tumor -->
+                <article class="project-card cat-vision">
+                    <div class="pj-header">
+                        <div class="pj-title">Brain Tumor Detection System</div>
+                        <span class="pj-context">Computer Vision | Medical</span>
+                        <a href="https://github.com/Shalaka127/brain-tumor-segmentation" target="_blank"
+                            class="git-link" title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">YOLOv8</span>
+                        <span class="tech-pill">OpenCV</span>
+                        <span class="tech-pill">Python</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Real-time tumor localization in MRI scans.</li>
+                            <li>Optimized pipelines reduced detection latency by ~40%.</li>
+                            <li>Enabled reliable clinical decision support.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 3: Nidra AI -->
+                <article class="project-card cat-genai">
+                    <div class="pj-header">
+                        <div class="pj-title">NIDRA AI - Dream Analysis</div>
+                        <span class="pj-context">GenAI Product | Full Stack</span>
+                        <a href="https://github.com/Shalaka127/Nidra-Ai" target="_blank" class="git-link"
+                            title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">GPT-4</span>
+                        <span class="tech-pill">Whisper</span>
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">Tailwind</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Built GenAI engine for symbolic dream interpretation.</li>
+                            <li>Converts text/voice inputs into emotional insights.</li>
+                            <li> deployed secure, real-time AI inference.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 4: Walmart Forecasting -->
+                <article class="project-card cat-ml">
+                    <div class="pj-header">
+                        <div class="pj-title">Retail Sales Forecasting</div>
+                        <span class="pj-context">Walmart Data | Time Series</span>
+                        <a href="https://github.com/Shalaka127/walmart-case-study" target="_blank" class="git-link"
+                            title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">SARIMA</span>
+                        <span class="tech-pill">Statistical Analysis</span>
+                        <span class="tech-pill">Pandas</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Analyzed 6,400+ weekly store-level sales records.</li>
+                            <li>Identified seasonal patterns & economic drivers (CPI).</li>
+                            <li>Reliable 12-week future sales forecasts.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 5: YouTube Dashboard -->
+                <article class="project-card cat-bi">
+                    <div class="pj-header">
+                        <div class="pj-title">YouTube Analytics Dashboard</div>
+                        <span class="pj-context">Business Intelligence | API</span>
+                        <a href="https://github.com/Shalaka127/-Real-Time-Social-Media-Monitoring-Dashboard"
+                            target="_blank" class="git-link" title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">Power BI</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">YouTube API</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Analyzed metric trends across 100+ videos.</li>
+                            <li>Reduced manual reporting effort by ~70%.</li>
+                            <li>Enabled data-driven content optimization.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 6: Bike Sharing -->
+                <article class="project-card cat-ml">
+                    <div class="pj-header">
+                        <div class="pj-title">Bike Sharing Demand Forecast</div>
+                        <span class="pj-context">Time Series | Operational</span>
+                        <a href="https://github.com/Shalaka127/bike-sharing-time-series-forecasting" target="_blank"
+                            class="git-link" title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">Random Forest</span>
+                        <span class="tech-pill">LSTM</span>
+                        <span class="tech-pill">Prophet</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Modeled daily demand on 731 time-series observations.</li>
+                            <li>Selected Random Forest (RMSE ≈ 953, MAPE ≈ 18%).</li>
+                            <li>Captured trend and weekly/yearly seasonality.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 7: Movie Recommender -->
+                <article class="project-card cat-genai">
+                    <div class="pj-header">
+                        <div class="pj-title">Content-Based Movie Recommender</div>
+                        <span class="pj-context">NLP | Similarity Modeling</span>
+                        <a href="https://github.com/Shalaka127/movie_recommender-system" target="_blank"
+                            class="git-link" title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">TF-IDF</span>
+                        <span class="tech-pill">Sigmoid Kernel</span>
+                        <span class="tech-pill">Gradio</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Addressed cold-start problem without user ratings.</li>
+                            <li>Top-N suggestions across 5,000+ movies.</li>
+                            <li>Captured non-linear semantic relationships.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 8: Reddit Sentiment Analyzer -->
+                <article class="project-card cat-nlp">
+                    <div class="pj-header">
+                        <div class="pj-title">Reddit Sentiment Analyzer</div>
+                        <span class="pj-context">NLP | Social Data</span>
+                        <a href="https://github.com/Shalaka127/Reddit_sentiment_analaysis" target="_blank"
+                            class="git-link" title="View Source">GITHUB_REPO ↗</a>
+                    </div>
+                    <div class="pj-tech-stack">
+                        <span class="tech-pill">Reddit API</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">NLP</span>
+                    </div>
+                    <div class="pj-impact-box">
+                        <ul>
+                            <li>Analyzed user sentiment using Reddit API data ingestion.</li>
+                            <li>Processed unstructured social text for specific keywords.</li>
+                            <li>Applied NLP techniques for trend identification.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            if (card.classList.contains(filterValue)) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

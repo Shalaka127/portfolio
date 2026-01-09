@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing | Shalaka Gangurde</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        .writing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .writing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .article-card:hover {
+            border-color: #888;
+            transform: translateY(-2px);
+            background-color: #1a1a1a;
+        }
+
+        .article-meta {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .article-card:hover .read-more {
+            opacity: 1;
+            color: var(--accent-green);
+        }
+
+        .external-icon {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-area">
+                <span class="initials">SG</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="navigation.html" style="color: var(--accent-green);">00</a></li>
+                <li><a href="index.html" data-tooltip="Profile">01</a></li>
+                <li><a href="projects.html" data-tooltip="Projects">02</a></li>
+                <li><a href="experience.html" data-tooltip="Timeline">03</a></li>
+                <li><a href="skills.html" data-tooltip="Capability Matrix">04</a></li>
+                <li><a href="research.html" data-tooltip="Academic Archives">05</a></li>
+                <li><a href="writing.html" class="active" data-tooltip="Writing Log">06</a></li>
+                <li><a href="contact.html" data-tooltip="Comms Terminal">07</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="status-bar">
+                <div class="identity">
+                    <h1>Writing Log</h1>
+                    <span class="role">Perspective & Philosophy</span>
+                </div>
+                <div class="system-status">
+                    <span class="status-text">SOURCE: MEDIUM.COM</span>
+                </div>
+            </header>
+
+            <section class="intro-card">
+                <h2>The Human element in Data.</h2>
+                <p>Exploring the intersection of psychology, ethics, and self-improvement. Because better humans build
+                    better systems.</p>
+            </section>
+
+            <div class="writing-grid">
+
+                <a href="https://medium.com/@shalaka.gangurde/grey-inside-black-and-white-outside-98..." target="_blank"
+                    class="article-card">
+                    <div class="article-meta">
+                        <span>OCT 3, 2025</span>
+                        <span>•</span>
+                        <span>PSYCHOLOGY</span>
+                    </div>
+                    <h3 class="article-title">Grey Inside, Black and White Outside</h3>
+                    <p class="article-desc">"Have you noticed how forgiving we are of ourselves, yet how strict we are
+                        with others? When I make a mistake, I tell myself, 'I’m human...'"</p>
+                    <div class="read-more">Read on Medium <span class="external-icon">↗</span></div>
+                </a>
+
+                <a href="https://medium.com/@shalaka.gangurde/morality-or-performance-the-crisis-of-selective-ethics..."
+                    target="_blank" class="article-card">
+                    <div class="article-meta">
+                        <span>FEB 28, 2025</span>
+                        <span>•</span>
+                        <span>ETHICS</span>
+                    </div>
+                    <h3 class="article-title">Morality or Performance?</h3>
+                    <p class="article-desc">“The Crisis of Selective Ethics” — An exploration of how we often trade
+                        moral grounding for high-performance outcomes.</p>
+                    <div class="read-more">Read on Medium <span class="external-icon">↗</span></div>
+                </a>
+
+                <a href="https://medium.com/@shalaka.gangurde/self-love-vs-external-validation-..." target="_blank"
+                    class="article-card">
+                    <div class="article-meta">
+                        <span>DEC 3, 2024</span>
+                        <span>•</span>
+                        <span>PHILOSOPHY</span>
+                    </div>
+                    <h3 class="article-title">Self-Love VS External Validation</h3>
+                    <p class="article-desc">The Paradox of Self-Love and External Validation. Why seeking outside
+                        approval often erodes the very foundation of self-worth we try to build.</p>
+                    <div class="read-more">Read on Medium <span class="external-icon">↗</span></div>
+                </a>
+
+                <a href="https://medium.com/@shalaka.gangurde/the-root-of-self-doubt-..." target="_blank"
+                    class="article-card">
+                    <div class="article-meta">
+                        <span>NOV 2, 2024</span>
+                        <span>•</span>
+                        <span>GROWTH</span>
+                    </div>
+                    <h3 class="article-title">The Root Of Self-Doubt</h3>
+                    <p class="article-desc">Have you ever ventured into a path to improve yourself? We’ve all searched
+                        for that perfect piece of advice on self-improvement…</p>
+                    <div class="read-more">Read on Medium <span class="external-icon">↗</span></div>
+                </a>
+
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="https://medium.com/@shalaka.gangurde" target="_blank" class="btn secondary">View Full Archive
+                    on Medium</a>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation | Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-node {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-node:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-5px);
+            background-color: #1a1a1a;
+        }
+
+        .node-status {
+            width: 8px;
+            height: 8px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .nav-node:hover .node-status {
+            background-color: var(--accent-green);
+            box-shadow: 0 0 10px var(--accent-green);
+        }
+
+        .node-number {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .nav-node:hover .node-number {
+            color: var(--text-primary);
+        }
+
+        .node-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .node-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .overlay-header {
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+        .overlay-header h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .overlay-header p {
+            font-family: var(--font-mono);
+            color: var(--accent-green);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container" style="display:block; overflow-y:auto;">
+
+        <header class="overlay-header">
+            <h2>System Directory</h2>
+            <p>ACCESS POINT: LOCALHOST</p>
+        </header>
+
+        <div class="nav-grid">
+
+            <a href="index.html" class="nav-node">
+                <div class="node-status"></div>
+                <span class="node-number">01</span>
+                <span class="node-title">Profile</span>
+                <span class="node-desc">Executive summary, professional overview, and live status.</span>
+            </a>
+
+            <a href="projects.html" class="nav-node">
+                <div class="node-status"></div>
+                <span class="node-number">02</span>
+                <span class="node-title">Projects</span>
+                <span class="node-desc">Applied case studies, technical logs, and outcome analysis.</span>
+            </a>
+
+            <a href="experience.html" class="nav-node">
+                <div class="node-status"></div>
+                <span class="node-number">03</span>
+                <span class="node-title">Timeline</span>
+                <span class="node-desc">Professional history, internship roles, and certifications.</span>
+            </a>
+
+            <a href="skills.html" class="nav-node">
+                <div class="node-status"></div>
+                <span class="node-number">04</span>
+                <span class="node-title">Capabilities</span>
+                <span class="node-desc">Technical stack matrix, frontier tech, and operational traits.</span>
+            </a>
+
+            <a href="research.html" class="nav-node">
+                <div class="node-status"></div>
+                <span class="node-number">05</span>
+                <span class="node-title">Academic Archives</span>
+                <span class="node-desc">Independent research, survey studies, and theoretical work.</span>
+            </a>
+
+            <a href="writing.html" class="nav-node">
+                <div class="node-status"></div>
+                <span class="node-number">06</span>
+                <span class="node-title">Writing Log</span>
+                <span class="node-desc">Medium articles, philosophical notes, and personal thoughts.</span>
+            </a>
+
+            <a href="contact.html" class="nav-node">
+                <div class="node-status"></div>
+                <span class="node-number">07</span>
+                <span class="node-title">Comms Terminal</span>
+                <span class="node-desc">Establish uplink, view transmission channels, and encrypted pipes.</span>
+            </a>
+
+        </div>
+
+        <div style="text-align:center; padding-bottom: 3rem;">
+            <a href="index.html" class="btn secondary">Exit Directory</a>
+        </div>
+    </div>
+</body>
+
+</html>

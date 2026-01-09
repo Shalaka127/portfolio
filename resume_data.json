@@ -1,0 +1,146 @@
+{
+  "profile": {
+    "name": "Shalaka Gangurde",
+    "title": "Data Scientist | Data Analyst",
+    "location": "Mumbai, Maharashtra, India",
+    "links": {
+      "email": "shalaka.12.sg@gmail.com",
+      "linkedin": "in/shalaka-g-45833a368",
+      "github": "github.com/Shalaka127"
+    }
+  },
+  "education": [
+    {
+      "degree": "B.Tech, Electronics and Computer Science Engineering Honors in Data Analytics",
+      "institution": "Vidyalankar Institute of Technology, Mumbai",
+      "year": "2026",
+      "gpa": "8.40/10"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Data Visualization Intern",
+      "company": "Infosys Springboard (Infosys Ltd.)",
+      "dates": "Dec 2025 - Jan 2026",
+      "type": "Virtual Internship",
+      "description": "Analyzing healthcare operations datasets. Cleaning, preprocessing (accuracy/consistency). Developed interactive Power BI dashboards (DAX, KPIs, modeling). Techniques: EDA, KPI tracking, trend analysis, comparative analysis.",
+      "metrics": []
+    },
+    {
+      "role": "Data Science Intern",
+      "company": "Labmentix Edtech Pvt. Ltd.",
+      "dates": "May 2025 - June 2025",
+      "description": "Applied analytics. Data cleaning, EDA on structured datasets. SQL for extraction/aggregation. Built/evaluated ML models for fraud analysis/prediction. Interpreted outputs for decision support.",
+      "metrics": []
+    },
+    {
+      "role": "Technical Core Member",
+      "company": "IETE Student Committee - Vidyalankar Institute of Technology",
+      "dates": "Aug 2023 - Aug 2024",
+      "metrics": [
+        "Supported 10+ technical workshops/seminars",
+        "Zero critical technical failures",
+        "Resolved real-time issues for 200+ participants"
+      ]
+    },
+    {
+      "role": "Volunteer",
+      "company": "Nehru Yuva Kendra Sangathan (NYKS)",
+      "dates": "July 2023 - Aug 2023",
+      "description": "Learning sessions for primary students (Grades 1-4). Environmental initiatives (tree plantation, cleanliness). Community welfare programmes."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Credit Risk & Fraud Scoring Engine",
+      "context": "Academic Project",
+      "tech": ["Pandas", "SMOTE", "PCA", "Random Forest", "XGBoost"],
+      "impact": [
+        "Reduced feature space by 50% (14 PCs, ~92% variance retained)",
+        "Increased accuracy 0.64 -> 0.75",
+        "Reduced high-cost misclassification errors (Good->Poor -63%, Standard->Poor -40%)"
+      ]
+    },
+    {
+      "title": "Brain Tumor Detection System (Computer Vision)",
+      "context": "Academic Project",
+      "tech": ["YOLOv8", "Python", "OpenCV"],
+      "impact": [
+        "Real-time tumor localization in MRI scans",
+        "Reduced detection latency by ~40%"
+      ]
+    },
+    {
+      "title": "Retail Sales Performance Analysis & Forecasting (Walmart)",
+      "context": "Academic Project",
+      "tech": ["Python", "Pandas", "Statistical Analysis", "SARIMA"],
+      "impact": [
+        "Analyzed 6,400+ weekly store-level sales records",
+        "Identified seasonal patterns/economic drivers",
+        "Forecasted 12-week future sales with reliable accuracy (MAE/RMSE)"
+      ]
+    },
+    {
+      "title": "Bike Sharing Demand Forecasting",
+      "context": "Time Series & ML",
+      "tech": ["SARIMAX", "Prophet", "Random Forest", "LSTM"],
+      "impact": [
+        "Modeled daily demand on 731 time-series observations",
+        "Selected Random Forest (RMSE ~ 953, MAPE ~ 18%)"
+      ]
+    },
+    {
+      "title": "NIDRA AI - Generative AI Dream Analysis Platform",
+      "context": "GenAI Project",
+      "tech": ["OpenAI API", "GPT-4", "Mini", "Whisper", "Prompt Engineering", "Next.js", "Tailwind CSS"],
+      "impact": [
+        "Full-stack AI inference application",
+        "Converts text/voice to symbolic interpretations"
+      ]
+    },
+    {
+      "title": "YouTube Channel Performance Analytics Dashboard",
+      "context": "Power BI & API",
+      "tech": ["YouTube Data API", "Python", "Power Query", "Power BI"],
+      "impact": [
+        "Analyzed video-level metrics (100+ videos)",
+        "Reduced manual reporting effort by ~70%"
+      ]
+    },
+    {
+      "title": "Content-Based Movie Recommendation System",
+      "context": "NLP & Similarity Modeling",
+      "tech": ["Python", "Pandas", "Scikit-learn", "TF-IDF", "Sigmoid Kernel", "Plotly", "Seaborn", "Gradio"],
+      "impact": [
+        "Addressed cold-start problem without user ratings",
+        "Top-N suggestions across 5,000+ movies"
+      ]
+    },
+    {
+      "title": "Generative AI for Automated Machine Learning",
+      "context": "Survey Study",
+      "tech": ["LLMs", "GANs", "VAEs", "Diffusion Models"],
+      "impact": [
+        "Analyzed 30+ peer-reviewed studies (2020-2025)",
+        "Highlighted ~12% accuracy improvements and 35x-50x speedups"
+      ]
+    }
+  ],
+  "skills": {
+    "programming": ["Python", "R", "C++", "SQL (Advanced)", "JavaScript (Basic)", "HTML/CSS (Basic)"],
+    "machine_learning": ["Linear & Logistic Regression", "Random Forest", "XGBoost", "PCA", "SMOTE"],
+    "time_series": ["SARIMA", "SARIMAX", "Holt-Winters", "Prophet", "LSTM"],
+    "computer_vision": ["YOLOv8", "OpenCV (MRI analysis)"],
+    "nlp_genai": ["TF-IDF", "OpenAI API", "GPT-4o Mini", "Whisper", "Prompt Engineering"],
+    "data_bi": ["Power BI", "Excel", "Matplotlib", "Seaborn", "Plotly"],
+    "apis": ["REST APIs", "YouTube API", "Reddit API", "OAuth"],
+    "certifications": [
+      "Microsoft SQL Certification Training (2026)",
+      "Hands-On Data Visualization with Microsoft Power BI (2025)",
+      "Big Data (Infosys Springboard, 2025)",
+      "Data Analytics Using Power BI (2025)",
+      "Advanced Excel (2024)",
+      "DBMS Course (2024)"
+    ]
+  }
+}
