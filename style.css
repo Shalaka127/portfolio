@@ -622,10 +622,10 @@ body {
     }
 
     to {
-        width: 16.5ch;
+        width: 17ch;
     }
 
-    /* 'SHALAKA GANGURDE' approx 16ch */
+    /* buffer for safest rendering */
 }
 
 @keyframes blinkCursor {
@@ -637,6 +637,21 @@ body {
 
     50% {
         border-color: var(--accent-green)
+    }
+}
+
+/* Mobile Intro Adjustments */
+@media (max-width: 900px) {
+    .name-phase {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .name-phase {
+        font-size: 1.2rem;
+        /* Ensure it fits on narrow screens */
+        border-right-width: 2px;
     }
 }
 
