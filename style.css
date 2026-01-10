@@ -602,56 +602,54 @@ body {
     /* Start hidden */
 }
 
-/* Phase 1: Quick Cinematic Expand */
+/* Phase 1: Premium Cinematic Reveal */
 .name-phase {
-    font-size: 4rem;
-    letter-spacing: 2px;
+    font-size: clamp(1.8rem, 6vw, 5rem);
+    /* Responsive sizing */
+    letter-spacing: -1px;
+    font-weight: 800;
     text-align: center;
-    animation: quickExpand 2.2s cubic-bezier(0.1, 0.5, 0.1, 1) forwards;
+    background: linear-gradient(120deg, #fff, var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: premiumReveal 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-@keyframes quickExpand {
+@keyframes premiumReveal {
     0% {
         opacity: 0;
-        transform: scale(0.5);
-        filter: blur(15px);
+        transform: translateY(30px) scale(0.9);
+        filter: blur(20px);
     }
 
     20% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0) scale(1);
         filter: blur(0px);
-        color: #fff;
+        letter-spacing: -1px;
     }
 
-    70% {
+    85% {
         opacity: 1;
-        transform: scale(1.1);
-        color: var(--accent-green);
+        transform: translateY(0) scale(1.05);
+        /* Subtle float */
         filter: blur(0px);
+        letter-spacing: 0px;
+        /* Slight breathing */
     }
 
     100% {
         opacity: 0;
-        transform: scale(1.5);
+        transform: translateY(-20px) scale(1.1);
         filter: blur(10px);
-        letter-spacing: 10px;
-        /* Expand letters too */
     }
 }
 
 /* Mobile Intro Adjustments */
-@media (max-width: 900px) {
-    .name-phase {
-        font-size: 2rem;
-    }
-}
-
 @media (max-width: 600px) {
     .name-phase {
-        font-size: 1.2rem;
-        /* Ensure it fits on narrow screens */
-        border-right-width: 2px;
+        padding: 0 1rem;
+        /* Prevent edge touching */
     }
 }
 
