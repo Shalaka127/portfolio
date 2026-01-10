@@ -512,66 +512,35 @@ body {
 
 /* Featured Insight Section */
 .featured-insight {
-    padding-top: 1rem;
+    padding-top: 3rem;
+    /* Increased padding */
+    margin-top: 3rem;
+    /* Increased margin to prevent overlap */
+    position: relative;
+    z-index: 10;
 }
 
 .section-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     gap: 1rem;
 }
 
-.section-header h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
-.section-header .line {
-    flex: 1;
-    height: 1px;
-    background-color: var(--border-color);
-}
-
-.insight-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
+/* ... existing styles ... */
 
 .project-preview {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     padding: 1.5rem;
-}
-
-.preview-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    font-family: var(--font-mono);
-}
-
-.preview-header .tag {
-    color: var(--accent-blue);
-}
-
-.project-preview h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-preview p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
+    backdrop-filter: blur(12px);
+    /* ensure glass effect */
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .mini-metric {
-    background-color: #111;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
     padding: 0.5rem;
     border-left: 2px solid var(--accent-green);
     margin-bottom: 1rem;
