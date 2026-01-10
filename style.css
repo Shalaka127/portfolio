@@ -572,6 +572,7 @@ body {
 }
 
 /* CINEMATIC INTRO SEQUENCE */
+/* CINEMATIC INTRO SEQUENCE */
 #opening-sequence {
     position: fixed;
     top: 0;
@@ -583,7 +584,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 1s ease-out;
+    transition: opacity 0.5s ease-out;
 }
 
 #opening-sequence.fade-out {
@@ -592,34 +593,36 @@ body {
 }
 
 .intro-text {
+    position: absolute;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 5rem;
-    letter-spacing: -2px;
-    color: var(--accent-green);
     text-transform: uppercase;
-    animation: movieScale 4s cubic-bezier(0.6, 0.05, 0.01, 0.9) forwards;
-    opacity: 0;
-    transform: scale(1);
-    text-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
-}
-
-.intro-sub {
-    position: absolute;
-    bottom: 20%;
-    font-family: 'JetBrains Mono', monospace;
-    color: #666;
-    font-size: 0.8rem;
-    letter-spacing: 5px;
-    animation: fadeSub 4s ease-in forwards;
+    color: #fff;
     opacity: 0;
 }
 
-@keyframes movieScale {
+/* Phase 1: Full Name (0s - 2s) */
+.name-phase {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    animation: phaseOne 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Phase 2: Initials (2s - 4s) */
+.logo-phase {
+    font-size: 8rem;
+    letter-spacing: -5px;
+    color: var(--accent-green);
+    text-shadow: 0 0 30px rgba(0, 255, 157, 0.4);
+    animation: phaseTwo 2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+    animation-delay: 1.8s;
+}
+
+@keyframes phaseOne {
     0% {
         opacity: 0;
-        transform: scale(0.8);
-        filter: blur(10px);
+        transform: scale(0.9);
+        filter: blur(5px);
     }
 
     20% {
@@ -631,31 +634,42 @@ body {
     80% {
         opacity: 1;
         transform: scale(1.1);
+        filter: blur(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+        filter: blur(10px);
+    }
+}
+
+@keyframes phaseTwo {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(10px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.1);
         color: var(--accent-green);
     }
 
     100% {
         opacity: 0;
-        transform: scale(3);
+        transform: scale(4);
         filter: blur(20px);
         color: #fff;
     }
 }
-
-@keyframes fadeSub {
-
-    0%,
-    50% {
-        opacity: 0;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
 }
 
 /* Responsive adjustments - PRESERVED & ENHANCED */
