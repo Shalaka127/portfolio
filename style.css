@@ -571,6 +571,93 @@ body {
     margin-left: 5px;
 }
 
+/* CINEMATIC INTRO SEQUENCE */
+#opening-sequence {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out;
+}
+
+#opening-sequence.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 5rem;
+    letter-spacing: -2px;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    animation: movieScale 4s cubic-bezier(0.6, 0.05, 0.01, 0.9) forwards;
+    opacity: 0;
+    transform: scale(1);
+    text-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+}
+
+.intro-sub {
+    position: absolute;
+    bottom: 20%;
+    font-family: 'JetBrains Mono', monospace;
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    animation: fadeSub 4s ease-in forwards;
+    opacity: 0;
+}
+
+@keyframes movieScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(10px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.1);
+        color: var(--accent-green);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(3);
+        filter: blur(20px);
+        color: #fff;
+    }
+}
+
+@keyframes fadeSub {
+
+    0%,
+    50% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 /* Responsive adjustments - PRESERVED & ENHANCED */
 @media (max-width: 900px) {
     .app-container {

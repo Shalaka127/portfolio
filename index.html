@@ -14,6 +14,22 @@
 </head>
 
 <body>
+    <!-- Cinematic Opening -->
+    <div id="opening-sequence">
+        <div class="intro-text">SHALAKA</div>
+        <div class="intro-sub">DATA INTELLIGENCE</div>
+    </div>
+    <script>
+        // Remove intro after animation
+        setTimeout(() => {
+            document.getElementById('opening-sequence').classList.add('fade-out');
+        }, 3800);
+        // Fallback to remove from DOM for performance
+        setTimeout(() => {
+            document.getElementById('opening-sequence').style.display = 'none';
+        }, 5000);
+    </script>
+
     <div class="app-container">
         <!-- Sidebar Navigation -->
         <nav class="sidebar">
