@@ -593,47 +593,50 @@ body {
 }
 
 .intro-text {
-    position: absolute;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    /* Position relative to let flexbox center it */
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
     text-transform: uppercase;
     color: #fff;
-    opacity: 0;
 }
 
-/* Phase 1: Full Name (0s - 3s) */
+/* Phase 1: Typewriter Effect */
 .name-phase {
-    font-size: 4rem;
-    /* Larger */
-    letter-spacing: 2px;
-    animation: phaseOne 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    font-size: 3rem;
+    /* Technical Size */
+    letter-spacing: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid var(--accent-green);
+    width: 0;
+    /* 16 chars + buffer */
+    animation:
+        typingIntro 2s steps(16, end) forwards,
+        blinkCursor 0.75s step-end infinite;
 }
 
-@keyframes phaseOne {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-        filter: blur(8px);
+@keyframes typingIntro {
+    from {
+        width: 0;
     }
 
-    30% {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0px);
-        color: #fff;
+    to {
+        width: 16.5ch;
     }
 
-    80% {
-        opacity: 1;
-        transform: scale(1.1);
-        color: var(--accent-green);
-        filter: blur(0px);
+    /* 'SHALAKA GANGURDE' approx 16ch */
+}
+
+@keyframes blinkCursor {
+
+    from,
+    to {
+        border-color: transparent
     }
 
-    100% {
-        opacity: 0;
-        transform: scale(1.5);
-        filter: blur(15px);
+    50% {
+        border-color: var(--accent-green)
     }
 }
 
