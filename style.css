@@ -1,12 +1,14 @@
 /* CSS Reset & Variables */
 :root {
     --bg-color: #0d0d0d;
-    --card-bg: #1a1a1a;
+    --card-bg: rgba(26, 26, 26, 0.3);
+    /* Glass transparent */
     --text-primary: #e0e0e0;
     --text-secondary: #a0a0a0;
     --accent-green: #00ff9d;
     --accent-blue: #00bcd4;
-    --border-color: #333;
+    --border-color: rgba(255, 255, 255, 0.1);
+    /* Subtle glass border */
     --font-main: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 }
@@ -36,7 +38,8 @@ body {
 /* Sidebar */
 .sidebar {
     width: 80px;
-    background-color: #111;
+    background-color: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(8px);
     border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
@@ -458,6 +461,8 @@ body {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 /* Glow Effect on Hover */
