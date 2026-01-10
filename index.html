@@ -17,7 +17,7 @@
     <!-- Cinematic Opening -->
     <div id="opening-sequence">
         <div class="intro-text name-phase">SHALAKA GANGURDE</div>
-        <audio id="intro-audio">
+        <audio id="intro-audio" playsinline>
             <source src="assets/audio/ambient_main.mp3" type="audio/mp3">
         </audio>
     </div>
@@ -26,10 +26,11 @@
         window.addEventListener('load', function () {
             var audio = document.getElementById("intro-audio");
             // Try to play audio (browsers might block it without interaction)
+            // On mobile, this often fails without a "click".
             var promise = audio.play();
             if (promise !== undefined) {
                 promise.catch(error => {
-                    console.log("Autoplay prevented by browser.");
+                    console.log("Autoplay prevented by browser (normal on mobile).");
                 });
             }
         });
@@ -49,12 +50,12 @@
                 }
             }, 100);
 
-        }, 2500);
+        }, 6500); // Extended to ~7 seconds audible
 
         // Fallback to remove from DOM for performance
         setTimeout(() => {
             document.getElementById('opening-sequence').style.display = 'none';
-        }, 3500);
+        }, 7500);
     </script>
 
     <div class="app-container">

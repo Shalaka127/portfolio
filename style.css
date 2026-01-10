@@ -612,7 +612,7 @@ body {
     width: 0;
     /* 16 chars + buffer */
     animation:
-        typingIntro 2s steps(16, end) forwards,
+        typingIntro 3.5s steps(16, end) forwards,
         blinkCursor 0.75s step-end infinite;
 }
 
