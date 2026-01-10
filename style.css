@@ -601,75 +601,40 @@ body {
     opacity: 0;
 }
 
-/* Phase 1: Full Name (0s - 2s) */
+/* Phase 1: Full Name (0s - 3s) */
 .name-phase {
-    font-size: 3rem;
+    font-size: 4rem;
+    /* Larger */
     letter-spacing: 2px;
-    animation: phaseOne 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-/* Phase 2: Initials (2s - 4s) */
-.logo-phase {
-    font-size: 8rem;
-    letter-spacing: -5px;
-    color: var(--accent-green);
-    text-shadow: 0 0 30px rgba(0, 255, 157, 0.4);
-    animation: phaseTwo 2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
-    animation-delay: 1.8s;
+    animation: phaseOne 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes phaseOne {
     0% {
         opacity: 0;
-        transform: scale(0.9);
-        filter: blur(5px);
+        transform: scale(0.8);
+        filter: blur(8px);
     }
 
-    20% {
+    30% {
         opacity: 1;
         transform: scale(1);
         filter: blur(0px);
+        color: #fff;
     }
 
     80% {
         opacity: 1;
         transform: scale(1.1);
+        color: var(--accent-green);
         filter: blur(0px);
     }
 
     100% {
         opacity: 0;
         transform: scale(1.5);
-        filter: blur(10px);
+        filter: blur(15px);
     }
-}
-
-@keyframes phaseTwo {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-        filter: blur(10px);
-    }
-
-    20% {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0px);
-    }
-
-    70% {
-        opacity: 1;
-        transform: scale(1.1);
-        color: var(--accent-green);
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(4);
-        filter: blur(20px);
-        color: #fff;
-    }
-}
 }
 
 /* Responsive adjustments - PRESERVED & ENHANCED */

@@ -16,18 +16,17 @@
 <body>
     <!-- Cinematic Opening -->
     <div id="opening-sequence">
-        <div class="intro-text name-phase">SHALAKA GANGURDE</div>
-        <div class="intro-text logo-phase">SG</div>
+        <div class="intro-text name-phase" style="width: 100%; text-align: center;">SHALAKA GANGURDE</div>
     </div>
     <script>
         // Remove intro after animation
         setTimeout(() => {
             document.getElementById('opening-sequence').classList.add('fade-out');
-        }, 3800);
+        }, 2500);
         // Fallback to remove from DOM for performance
         setTimeout(() => {
             document.getElementById('opening-sequence').style.display = 'none';
-        }, 5000);
+        }, 3500);
     </script>
 
     <div class="app-container">
