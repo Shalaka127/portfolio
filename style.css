@@ -593,50 +593,50 @@ body {
 }
 
 .intro-text {
-    /* Position relative to let flexbox center it */
     position: relative;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
     text-transform: uppercase;
     color: #fff;
+    opacity: 0;
+    /* Start hidden */
 }
 
-/* Phase 1: Typewriter Effect */
+/* Phase 1: Quick Cinematic Expand */
 .name-phase {
-    font-size: 3rem;
-    /* Technical Size */
-    letter-spacing: 0px;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 4px solid var(--accent-green);
-    width: 0;
-    /* 16 chars + buffer */
-    animation:
-        typingIntro 3.5s steps(16, end) forwards,
-        blinkCursor 0.75s step-end infinite;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-align: center;
+    animation: quickExpand 2.2s cubic-bezier(0.1, 0.5, 0.1, 1) forwards;
 }
 
-@keyframes typingIntro {
-    from {
-        width: 0;
+@keyframes quickExpand {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(15px);
     }
 
-    to {
-        width: 17ch;
+    20% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+        color: #fff;
     }
 
-    /* buffer for safest rendering */
-}
-
-@keyframes blinkCursor {
-
-    from,
-    to {
-        border-color: transparent
+    70% {
+        opacity: 1;
+        transform: scale(1.1);
+        color: var(--accent-green);
+        filter: blur(0px);
     }
 
-    50% {
-        border-color: var(--accent-green)
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+        filter: blur(10px);
+        letter-spacing: 10px;
+        /* Expand letters too */
     }
 }
 

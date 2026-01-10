@@ -17,53 +17,17 @@
     <!-- Cinematic Opening -->
     <div id="opening-sequence">
         <div class="intro-text name-phase">SHALAKA GANGURDE</div>
-        <audio id="intro-audio" playsinline>
-            <source src="assets/audio/ambient_main.mp3" type="audio/mp3">
-        </audio>
     </div>
     <script>
-        // Intro Logic
-        window.addEventListener('load', function () {
-            var audio = document.getElementById("intro-audio");
-            // Try auto-play
-            var promise = audio.play();
-            if (promise !== undefined) {
-                promise.catch(error => {
-                    console.log("Autoplay prevented. Waiting for user interaction.");
-                });
-            }
-        });
-
-        // UNLOCK AUDIO ON TAP (Mobile Fix)
-        document.addEventListener('click', function () {
-            var audio = document.getElementById("intro-audio");
-            if (audio.paused) {
-                audio.play();
-            }
-        });
-
         // Remove intro after animation
         setTimeout(() => {
             document.getElementById('opening-sequence').classList.add('fade-out');
-
-            // Fade out audio
-            var audio = document.getElementById("intro-audio");
-            var fadeAudio = setInterval(function () {
-                if (audio.volume > 0.1) {
-                    audio.volume -= 0.1;
-                } else {
-                    clearInterval(fadeAudio);
-                    audio.pause();
-                    audio.volume = 1.0; // Reset for next time
-                }
-            }, 100);
-
-        }, 6500); // Extended to ~7 seconds audible
+        }, 2200); // Quick intro (2.2s)
 
         // Fallback to remove from DOM for performance
         setTimeout(() => {
             document.getElementById('opening-sequence').style.display = 'none';
-        }, 7500);
+        }, 3000);
     </script>
 
     <div class="app-container">
