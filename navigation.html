@@ -98,6 +98,24 @@
 </head>
 
 <body>
+    <!-- Background Audio -->
+    <audio id="page-audio" loop>
+        <source src="assets/audio/ambient_main.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        window.addEventListener('load', function () {
+            var audio = document.getElementById("page-audio");
+            audio.volume = 0.4;
+            var promise = audio.play();
+            if (promise !== undefined) {
+                promise.catch(error => { console.log("Autoplay prevented. Waiting for interaction."); });
+            }
+        });
+        document.addEventListener('click', function () {
+            var audio = document.getElementById("page-audio");
+            if (audio.paused) audio.play();
+        });
+    </script>
     <div class="app-container" style="display:block; overflow-y:auto;">
 
         <header class="overlay-header">
