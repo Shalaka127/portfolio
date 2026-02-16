@@ -373,72 +373,118 @@
                     <h3>Verified Credentials</h3>
                     <div class="line"></div>
                 </div>
-                <div class="cert-grid">
-                    <div class="cert-badge">
-                        <div class="cert-icon">
-                            <a href="assets/cert_sql.png" target="_blank">
-                                <img src="assets/cert_sql.png" alt="SQL Cert"
-                                    onerror="this.style.display='none';this.parentElement.innerHTML='📜'">
-                            </a>
+                <div class="cert-gallery">
+                    <!-- SQL -->
+                    <div class="cert-item"
+                        onclick="openModal('assets/cert_sql.png', 'Microsoft SQL Certification', 'Authorized 2026')">
+                        <div class="cert-preview">
+                            <img src="assets/cert_sql.png" alt="SQL Cert"
+                                onerror="this.src='https://placehold.co/600x400/111/00ff9d?text=SQL+Certification'">
                         </div>
-                        <div class="cert-info">
+                        <div class="cert-detail">
                             <h4>Microsoft SQL Certification</h4>
-                            <span>Authorized 2026</span>
+                            <p><span>2026</span> <span class="issuer">Microsoft Training</span></p>
                         </div>
                     </div>
-                    <div class="cert-badge">
-                        <div class="cert-icon">
-                            <a href="assets/cert_powerbi.png" target="_blank">
-                                <img src="assets/cert_powerbi.png" alt="PowerBI Cert"
-                                    onerror="this.style.display='none';this.parentElement.innerHTML='📊'">
-                            </a>
+
+                    <!-- Power BI -->
+                    <div class="cert-item"
+                        onclick="openModal('assets/cert_powerbi.png', 'Power BI Data Visualization', 'Infosys Springboard 2025')">
+                        <div class="cert-preview">
+                            <img src="assets/cert_powerbi.png" alt="Power BI Cert"
+                                onerror="this.src='https://placehold.co/600x400/111/00ff9d?text=Power+BI+Certification'">
                         </div>
-                        <div class="cert-info">
+                        <div class="cert-detail">
                             <h4>Power BI Data Visualization</h4>
-                            <span>Infosys Springboard 2025</span>
+                            <p><span>2025</span> <span class="issuer">Infosys Springboard</span></p>
                         </div>
                     </div>
-                    <div class="cert-badge">
-                        <div class="cert-icon">
-                            <a href="assets/cert_bigdata.png" target="_blank">
-                                <img src="assets/cert_bigdata.png" alt="Big Data Cert"
-                                    onerror="this.style.display='none';this.parentElement.innerHTML='💾'">
-                            </a>
+
+                    <!-- Big Data -->
+                    <div class="cert-item"
+                        onclick="openModal('assets/cert_bigdata.png', 'Big Data Foundation', 'Infosys Springboard 2025')">
+                        <div class="cert-preview">
+                            <img src="assets/cert_bigdata.png" alt="Big Data Cert"
+                                onerror="this.src='https://placehold.co/600x400/111/00ff9d?text=Big+Data+Certification'">
                         </div>
-                        <div class="cert-info">
-                            <h4>Big Data</h4>
-                            <span>Infosys Springboard 2025</span>
+                        <div class="cert-detail">
+                            <h4>Big Data Foundation</h4>
+                            <p><span>2025</span> <span class="issuer">Infosys Springboard</span></p>
                         </div>
                     </div>
-                    <div class="cert-badge">
-                        <div class="cert-icon">
-                            <a href="assets/cert_analytics.png" target="_blank">
-                                <img src="assets/cert_analytics.png" alt="Analytics Cert"
-                                    onerror="this.style.display='none';this.parentElement.innerHTML='📈'">
-                            </a>
+
+                    <!-- Analytics -->
+                    <div class="cert-item"
+                        onclick="openModal('assets/cert_analytics.png', 'Data Analytics Foundation', 'Infosys Springboard 2025')">
+                        <div class="cert-preview">
+                            <img src="assets/cert_analytics.png" alt="Analytics Cert"
+                                onerror="this.src='https://placehold.co/600x400/111/00ff9d?text=Analytics+Certification'">
                         </div>
-                        <div class="cert-info">
+                        <div class="cert-detail">
                             <h4>Data Analytics Foundation</h4>
-                            <span>Infosys Springboard 2025</span>
+                            <p><span>2025</span> <span class="issuer">Infosys Springboard</span></p>
                         </div>
                     </div>
-                    <div class="cert-badge">
-                        <div class="cert-icon">
-                            <a href="assets/cert_excel.png" target="_blank">
-                                <img src="assets/cert_excel.png" alt="Excel Cert"
-                                    onerror="this.style.display='none';this.parentElement.innerHTML='🧠'">
-                            </a>
+
+                    <!-- Excel -->
+                    <div class="cert-item"
+                        onclick="openModal('assets/cert_excel.png', 'Advanced Excel', 'Skill India 2024')">
+                        <div class="cert-preview">
+                            <img src="assets/cert_excel.png" alt="Excel Cert"
+                                onerror="this.src='https://placehold.co/600x400/111/00ff9d?text=Excel+Certification'">
                         </div>
-                        <div class="cert-info">
+                        <div class="cert-detail">
                             <h4>Advanced Excel</h4>
-                            <span>Skill India 2024</span>
+                            <p><span>2024</span> <span class="issuer">Skill India</span></p>
                         </div>
                     </div>
                 </div>
             </div>
 
         </main>
+
     </div>
+
+    <!-- Modal Overlay -->
+    <div id="certModal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="modal-close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-img-container">
+                <img id="modalImg" src="" alt="Certification Full View">
+            </div>
+            <div class="modal-caption">
+                <h3 id="modalTitle">Certification Title</h3>
+                <p id="modalDesc">Issuer and Date Details</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imgSrc, title, desc) {
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDesc = document.getElementById('modalDesc');
+
+            modalImg.src = imgSrc;
+            modalTitle.innerText = title;
+            modalDesc.innerText = desc;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 </body>
 
 </html>
